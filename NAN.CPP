@@ -1,0 +1,46 @@
+#include <iostream.h>
+#include <string.h>
+
+int main() {
+  double Noobie;
+  int health = 100;
+  int enemiesDefeated = 0;
+
+  cout << "Welcome to the game! What is your name? ";
+  cin >> " I am Noobie " ;
+
+  cout << "Hello, " << Noobie << "! You are starting the game with " << health << " health points and have defeated " << enemiesDefeated << " enemies." << endl;
+
+  while (health > 0) {
+    cout << "What would you like to do?" << endl;
+    cout << "1. Fight an enemy" << endl;
+    cout << "2. Rest" << endl;
+    cout << "3. Quit" << endl;
+
+    int choice;
+    cin >> choice;
+
+    if (choice == 1) {
+      cout << "You have chosen to fight an enemy." << endl;
+      // Code to fight an enemy goes here
+      enemiesDefeated++;
+    } else if (choice == 2) {
+      cout << "You have chosen to rest." << endl;
+      // Code to rest goes here
+      health += 10;
+    } else if (choice == 3) {
+      cout << "You have chosen to quit the game." << endl;
+      break;
+    } else {
+      cout << "Invalid choice." << endl;
+    }
+  }
+
+  if (health <= 0) {
+    cout << "You have been defeated." << endl;
+  } else {
+    cout << "You have quit the game." << endl;
+  }
+
+  return 0;
+}
